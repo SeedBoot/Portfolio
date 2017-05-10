@@ -1,35 +1,74 @@
 * {
 	box-sizing: border-box;
+    font-size: 100%;
+}
+
+html{
+    height: 100%;
 }
 
 body{
-
+    margin: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.navigation ul{
-	list-style-type: none;
+.flexbod{
+    flex: 1;
+}
+
+.name{
+	/*padding: 5px;*/
+    /*text-decoration: none;*/
+	text-align: right;
+    font-family: 'Inknut Antiqua', serif;
+    color: #279f27;
+}
+
+.ham-menu{
+    width: 35px;
+    display: block;
+    z-index: 2;
+    position: relative;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.ham-menu .line{
+    background: green;
+    width: 100%;
+    display: block;
+    margin-top: 3px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 	text-align: center;
-	padding: 0;
 }
 
+.foot{
+	font-family: 'Inknut Antiqua', serif;
+	text-align: center;
+}
+
+/*
 ul li{
-	display: inline;
+	display: inline-block;
 }
+*/
 
-.button {
-  /*font: bold 11px Arial;*/
-  text-decoration: none;
-  background-color: #279f27;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  border-top: 2px solid #64ad64;
-  border-right: 2px solid #0a290a;
-  border-bottom: 2px solid #0a290a;
-  border-left: 2px solid #64ad64;
-}
-
-.logo {
-	display: inline;
-	padding: 5px;
-}
+/*.button {
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #279f27;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+}*/
