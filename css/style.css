@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-size: 100%;
+  /*font-size: 100%;*/
 }
 
 html {
@@ -12,10 +12,12 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #279f27;
 }
 
 .flexbod {
   flex: 1;
+  background-color: white;
 }
 
 .name {
@@ -30,10 +32,10 @@ body {
   text-align: center;
 }
 
+/***MENU***/
 
 /*HAMBURGER*/
-
-.ham-menu {
+.mob-menu {
   width: 30px;
   display: block;
   z-index: 1;
@@ -41,7 +43,7 @@ body {
   margin: 0 auto;
 }
 
-.ham-menu .line {
+.mob-menu .line {
   background: #279f27;
   width: 100%;
   display: block;
@@ -49,81 +51,102 @@ body {
   height: 4px;
   border-radius: 2px;
 }
-
-
 /**/
 
 .nav{
   padding: 0;
+  display: none; /*hidden for responsiveness*/
 }
 
 .nav li{
   margin-top: 8px;
-  padding: 0;
+  padding: 4px;
   list-style-type: none;
   text-align: center;
-  display: inline-block;
-}
-
-.back {
-  padding: 4px 8px;
-  border: 1px solid #279f27;
-  text-decoration: none;
-  color: #279f27;
-  cursor: pointer;
+  display: block;
 }
 
 .button {
   padding: 6px 8px;
   border: 1px solid #279f27;
   /*margin: 6px 0;*/
-  text-decoration: none;
+  background-color: white;
   color: #279f27;
+  text-decoration: none;
   cursor: pointer;
 }
+/***END OF MENU***/
+
+.about{
+  width: 100%;
+  height: 20em;
+  background-color: palevioletred
+}
+
+.show{
+  width: 100%;
+  height: 20em;
+  background-color: orange;
+  /*background-image: url("img/flower.jpg");
+  background-size: cover;*/
+}
+
+/*
+.img-flower{
+  width: 100%;
+  background-size: cover;
+  background-position: bottom center;
+  overflow-x: hidden;
+}
+*/
 
 .foot {
   font-family: 'Inknut Antiqua', serif;
   text-align: center;
+  background-color: white;
 }
 
-
-/*.button {
-    font: bold 11px Arial;
-    text-decoration: none;
-    background-color: #279f27;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-}*/
-
-@media screen and (min-width : 650px) {
-  .ham-menu{
+/***LARGE MOBILE DEVICE***/
+@media screen and (min-width : 28em) {
+  .mob-menu{
     display: block;
   }
 
   .nav{
     display: none;
   }
+  
+  .nav li{
+    padding: 0;
+    display: inline-block;
+  }
 }
 
-@media screen and (min-width : 768px) {
-  .ham-menu{
+/***DESKTOP***/
+@media screen and (min-width : 49em) {
+  .flexbod{
+  }
+  
+  .mob-menu{
     display: none;
   }
 
   .nav{
     display: block;
   }
-}
-/*
-@media screen and (max-width : 767px) {
-  .ham-menu{
-    display: block;
-  }
 
-  .change-display{
-    display: none;
+  .about,
+  .show{
+    margin: 1px auto;
+    float: left;
+    width: 50%;
   }
-  */
+}
+
+@media screen and (min-width : 60em) {
+  .flexbod,
+  .foot{
+    margin: 0 auto;
+    width: 90%;
+  }
 }
