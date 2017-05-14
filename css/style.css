@@ -1,87 +1,92 @@
 * {
-	box-sizing: border-box;
-    font-size: 100%;
+  box-sizing: border-box;
+  font-size: 100%;
 }
 
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-body{
-    margin: 0;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.flexbod{
-    flex: 1;
+.flexbod {
+  flex: 1;
 }
 
-.name{
-	/*padding: 5px;*/
-    /*text-decoration: none;*/
-	text-align: center;
-    font-family: 'Inknut Antiqua', serif;
-    color: #279f27;
+.name {
+  /*padding: 5px;*/
+  /*text-decoration: none;*/
+  text-align: center;
+  font-family: 'Inknut Antiqua', serif;
+  color: #279f27;
 }
 
-.menu{
-	text-align: center;
+.menu {
+  text-align: center;
 }
+
 
 /*HAMBURGER*/
-.ham-menu{
-    width: 30px;
-    display: block;
-    z-index: 1;
-    /*position: relative;
-    top: 10px;
-    right: 15px;*/
-    cursor: pointer;
-    margin: 0 auto;
+
+.ham-menu {
+  width: 30px;
+  display: block;
+  z-index: 1;
+  cursor: pointer;
+  margin: 0 auto;
 }
 
-.ham-menu .line{
-    background: #279f27;
-    width: 100%;
-    display: block;
-    margin-top: 3px;
-    height: 4px;
-    border-radius: 2px;
+.ham-menu .line {
+  background: #279f27;
+  width: 100%;
+  display: block;
+  margin-top: 3px;
+  height: 4px;
+  border-radius: 2px;
 }
+
+
 /**/
 
-.nav, .nav1{
-    padding: 0;
-}
-.nav li, .nav1 li{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
-    display: inline-block;
+.nav{
+  padding: 0;
 }
 
-.back{
-	 padding: 4px 8px;
-	 border: 1px solid #279f27;
-     text-decoration: none;
-     color: #279f27;
-     cursor: pointer;
- }
-
- .button{
-	 padding: 4px 8px;
-	 border: 1px solid #279f27;
-    text-decoration: none;
-    color: #279f27;
- }
-
-.foot{
-	font-family: 'Inknut Antiqua', serif;
-	text-align: center;
+.nav li{
+  margin-top: 8px;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  display: inline-block;
 }
+
+.back {
+  padding: 4px 8px;
+  border: 1px solid #279f27;
+  text-decoration: none;
+  color: #279f27;
+  cursor: pointer;
+}
+
+.button {
+  padding: 6px 8px;
+  border: 1px solid #279f27;
+  /*margin: 6px 0;*/
+  text-decoration: none;
+  color: #279f27;
+  cursor: pointer;
+}
+
+.foot {
+  font-family: 'Inknut Antiqua', serif;
+  text-align: center;
+}
+
 
 /*.button {
     font: bold 11px Arial;
@@ -91,3 +96,34 @@ body{
     padding: 4px 8px;
     border-radius: 4px;
 }*/
+
+@media screen and (min-width : 650px) {
+  .ham-menu{
+    display: block;
+  }
+
+  .nav{
+    display: none;
+  }
+}
+
+@media screen and (min-width : 768px) {
+  .ham-menu{
+    display: none;
+  }
+
+  .nav{
+    display: block;
+  }
+}
+/*
+@media screen and (max-width : 767px) {
+  .ham-menu{
+    display: block;
+  }
+
+  .change-display{
+    display: none;
+  }
+  */
+}
