@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Oli Booty's Portfolio</title>
   <!--Some Meta-->
@@ -10,11 +9,11 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <!--Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Inknut+Antiqua" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
-
 <body>
   <div class="flexbod">
-
+    <!--MENU-->
     <div class="banner">
       <div class="logo">
         <h1 class="name">Oliver Booty</h1>
@@ -27,53 +26,49 @@
           <span class="line"></span>
         </div>
         <ul class="nav">
-          <li><a href="#" class="button">Web Development</a></li>
+          <li><a href="projects/webdev-portfolio.html" class="button" class="button">Web Development</a></li>
           <li><a href="#" class="button">Photography</a></li>
+          <li><a href="#" class="button">Graphic Design</a></li>
           <li><a href="#" class="button">About</a></li>
           <li><a href="#" class="button">Contact</a></li>
-          <li><a href="#" class="button">Blog</a></li>
         </ul>
       </div>
     </div>
+    <!--END MENU-->
     <div class="content">
-      <div class="about">
-        <div class="title">
-          <h1>Web development</h1>
+      <!--WEBDEV TILE-->
+      <div class="tile" id="webdevlink">
+        <img src="images/code_w800.jpg" alt="Code example" class="menu-image" />
+        <div class="about">
+          <h2>Web development</h2>
+          <article>
+            <p>Here you will find website concepts and ongoing projects.</p>
+          </article>
         </div>
-        <article>
-          <p>nsdovnsdiovnsodjbnodsuvn</p>
-        </article>
       </div>
-      <div class="show">
-      </div>
-
-      <div class="about">
-        <div class="title">
-          <h1>Photography</h1>
+      <!--PHOTOGRAPHY TILE-->
+      <div class="tile" id="photolink">
+        <img src="images/guitar_w800.jpg" alt="Code example" class="menu-image" />
+        <div class="about">
+          <h2>Photography</h2>
+          <article>
+            <p>Browse a selection of my photographs.</p>
+          </article>
         </div>
-        <article>
-          <p>nsdovnsdiovnsodjbnodsuvn</p>
-        </article>
       </div>
-      <div class="show">
-        <img class="img-front" src="flower.jpg" />
-      </div>
-
-      <div class="about">
-        <div class="title">
-          <h1>Music</h1>
+      <!--GRAPHIC DESIGN TILE-->
+      <div class="tile" id="graphlink">
+        <img src="images/flower.jpg" alt="This image is a placeholder, not indicative of content." class="menu-image" />
+        <div class="about">
+          <h2>Graphic Design</h2>
+          <article>
+            <p>Portfolio of assorted digital media.</p>
+          </article>
         </div>
-        <article>
-          <p>nsdovnsdiovnsodjbnodsuvn</p>
-        </article>
-      </div>
-      <div class="show">
-        <img class="img-front" src="guitar.jpg" />
       </div>
     </div>
-
+    <!--END MAIN CONTENT-->
   </div>
-
   <div class="foot">
     <p>Website created by Oliver Booty</p>
   </div>
@@ -81,5 +76,4 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script type="text/javascript" src="script/script.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,148 @@
+html{
+    height: 100%;
+}
+
+body{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.con{
+    flex: 1;
+}
+
+.name{
+    background: #ffbb56;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 50%;
+    min-width: 290px;
+    display: inline-block;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+.navigation{
+    margin: 0 auto;
+    border: 2px solid #ffbb56;
+    border-left: 0;
+    border-right: 0;
+    padding: 0;
+    width: 70%;
+}
+
+ul{
+    padding: 0;
+    margin: 10px;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+    padding: 0
+}
+
+.navigation ul li a{
+    background: #ffbb56;
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.disable{
+    /*color: #569AFF;*/
+    cursor: default;
+    opacity: 1 !important;
+}
+
+.banner{
+    background-image: url("images/fishermen.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    overflow-x: hidden;
+    height: 420px;
+    width: 95%;
+    max-width: 900px;
+    margin: 10px auto;
+    border-top: 2px solid #cc9544;
+    border-left: 2px solid #cc9544;
+    border-right: 2px solid #ffbb56;
+    border-bottom: 2px solid #ffbb56;
+}
+
+@media screen and (max-width : 768px){
+    .banner{
+        height: 350px;
+        overflow-x: hidden;
+        max-width: 90%;
+    }
+    
+}
+
+@media screen and (max-width : 480px){
+    a {
+        width:50%;
+        padding: 5px 0;
+        margin-bottom: 2px;
+    }
+    li{
+        display: inline;
+    }
+    .banner{
+        overflow-x: hidden;
+        max-width: 90%;
+    }
+    
+}
+
+@media screen and (max-width : 320px){
+    .banner{
+        overflow-x: hidden;
+        max-width: 90%;
+    }
+}
+
+.content{
+    width: 70%;
+    margin: 0 auto;
+}
+
+h2{
+    border: 3px solid #ffbb56;
+    border-left: 0;
+    border-right: 0;
+    margin: 0 auto;
+    width: 50%;
+    color: #ffbb56;
+    /*padding: 5px 10px;*/
+    text-transform: uppercase;
+}
+
+#about{
+    background: #ffbb56;
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px auto;
+}
+
+.foot{
+    border: 1px solid #ffbb56;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+    color: #ffbb56;
+}
