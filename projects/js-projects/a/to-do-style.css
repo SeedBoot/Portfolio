@@ -24,5 +24,10 @@ h1 {
   margin-left: 3px;
   border-radius: 100%;
   color: white;
-  background: red;
+  background: /*#EF615C*/#D75752;
+  border-bottom-color: #C14E49;
+  border-right-color: #C14E49;
+  border-left-color: #F0706C;
+  border-top-color: #F0706C;
+  font-size: 0.7em;
 }

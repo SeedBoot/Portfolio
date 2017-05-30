@@ -3,7 +3,7 @@ var doSubmit = document.querySelector('.doSubmit');
 
 //var listItems = document.querySelector('.listItems');
 
-var deleteButton;
+
 
 doField.focus();
 
@@ -15,20 +15,29 @@ function submitItem() {
   var checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   
-  deleteButton = document.createElement('input');
-  deleteButton.type = 'button';
-  deleteButton.className = 'delbtn';
-  deleteButton.value = 'X';
+  var delBtn = document.createElement('input');
+  delBtn.type = 'button';
+  delBtn.className = 'delbtn';
+  delBtn.value = 'X';
   
   list.appendChild(li);
   li.appendChild(checkbox);
   li.appendChild(document.createTextNode(userItem));
-  li.appendChild(deleteButton);
+  li.appendChild(delBtn);
   
   doField.value = '';
   doField.focus();
+  
+  deleteButton.addEventListener('click', deleteItem);
 }
 
 doSubmit.addEventListener('click', submitItem);
 
-function deleteItem() {}
+var deleteButton = document.querySelector('.delbtn');
+
+function deleteItem() {
+  deleteButton.parentNode.removeChild(deleteButton);
+  
+  doField.focus();
+}
+
