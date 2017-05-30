@@ -1,0 +1,28 @@
+html {
+  min-width: 382px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#box {
+  margin: 0 auto;
+  width: 80%;
+}
+
+#list li {
+  list-style-type: none;
+}
+
+.delbtn {
+  margin-left: 3px;
+  border-radius: 100%;
+  color: white;
+  background: red;
+}
