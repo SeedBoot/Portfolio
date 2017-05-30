@@ -1,0 +1,19 @@
+* {
+  border: 1px solid black;
+}
+
+body {
+  margin 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.page {
+  padding: 0;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
+  
+}
