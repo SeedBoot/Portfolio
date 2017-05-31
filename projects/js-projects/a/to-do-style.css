@@ -10,11 +10,20 @@ html {
 h1 {
   text-align: center;
 }
-
+/****INPUT****/
 #box {
   margin: 0 auto;
   width: 80%;
 }
+
+.dofield {
+  border-radius: 3px;
+}
+
+.dosubmit {
+  border-radius: 5px;
+}
+/********/
 
 #list li {
   list-style-type: none;

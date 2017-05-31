@@ -1,43 +1,46 @@
-var doField = document.querySelector('.doField');
-var doSubmit = document.querySelector('.doSubmit');
+var doField = document.querySelector('.dofield');
+var doSubmit = document.querySelector('.dosubmit');
 
-//var listItems = document.querySelector('.listItems');
-
-
+var deleteButton = document.querySelector('.delbtn');
 
 doField.focus();
 
 function submitItem() {
   var userItem = String(doField.value);
-  var list = document.getElementById('list');
-  var li = document.createElement('LI');
   
-  var checkbox = document.createElement('input');
-  checkbox.type = 'checkbox';
+  if(userItem != "") {
+    var list = document.getElementById('list');
+    var li = document.createElement('LI');
   
-  var delBtn = document.createElement('input');
-  delBtn.type = 'button';
-  delBtn.className = 'delbtn';
-  delBtn.value = 'X';
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
   
-  list.appendChild(li);
-  li.appendChild(checkbox);
-  li.appendChild(document.createTextNode(userItem));
-  li.appendChild(delBtn);
+    var delBtn = document.createElement('input');
+    delBtn.type = 'button';
+    delBtn.className = 'delbtn';
+    delBtn.value = 'X';
+    delBtn.addEventListener('click', function(e) {
+      li.parentNode.removeChild(li);
+      doField.focus();
+    }, false);
   
-  doField.value = '';
-  doField.focus();
+    list.appendChild(li);
+    li.appendChild(checkbox);
+    li.appendChild(document.createTextNode(userItem));
+    li.appendChild(delBtn);
   
-  deleteButton.addEventListener('click', deleteItem);
+    doField.value = '';
+    doField.focus();
+    
+  } else {
+    alert("Please insert a value!");
+  }
 }
 
 doSubmit.addEventListener('click', submitItem);
 
-var deleteButton = document.querySelector('.delbtn');
-
-function deleteItem() {
-  deleteButton.parentNode.removeChild(deleteButton);
   
-  doField.focus();
-}
-
+ /* } else {
+    doSubmit.disabled = true;
+    doField.disabled = true;
+  }*/
