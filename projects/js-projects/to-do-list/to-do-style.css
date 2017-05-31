@@ -1,0 +1,73 @@
+html {
+  min-width: 425px;
+  font-family: 'Handlee', cursive;
+  /*color: #292929;*/
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 400px;
+  min-height:500px;
+  background: url(paper.jpg);
+  border-radius: 2px;
+  box-shadow: 2px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.pin {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #292929;
+}
+/****INPUT****/
+#box {
+  margin: 0 auto;
+  width: 75%;
+}
+
+input[type = text] {
+  border-radius: 3px;
+  padding: 0.25em;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  background-color: rgba(250, 250, 250, 0.5);
+  font-family: 'Handlee', cursive;
+  font-size: 1.25em;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type = submit] {
+  border-radius: 5px;
+  font-family: 'Handlee', cursive;
+}
+/********/
+
+#list li {
+  list-style-type: none;
+  font-size: 1.25em;
+}
+
+.delbtn {
+  margin-left: 7px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  color: white;
+  background: /*#EF615C*/#D75752;
+  font-size: 0.6em;
+}
+
+.delbtn : focus
+.delbtn . focus
+.delbtn . hover {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}

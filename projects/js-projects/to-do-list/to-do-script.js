@@ -7,40 +7,35 @@ doField.focus();
 
 function submitItem() {
   var userItem = String(doField.value);
-  
-  if(userItem != "") {
+
+  if (userItem != "") {
     var list = document.getElementById('list');
     var li = document.createElement('LI');
-  
+
     var checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-  
+    checkbox.className = 'chkbtn';
+
     var delBtn = document.createElement('input');
     delBtn.type = 'button';
     delBtn.className = 'delbtn';
-    delBtn.value = 'X';
-    delBtn.addEventListener('click', function(e) {
+    delBtn.value = 'delete';
+    delBtn.addEventListener('click', function (e) {
       li.parentNode.removeChild(li);
       doField.focus();
     }, false);
-  
+
     list.appendChild(li);
     li.appendChild(checkbox);
     li.appendChild(document.createTextNode(userItem));
     li.appendChild(delBtn);
-  
+
     doField.value = '';
     doField.focus();
-    
+
   } else {
     alert("Please insert a value!");
   }
 }
 
 doSubmit.addEventListener('click', submitItem);
-
-  
- /* } else {
-    doSubmit.disabled = true;
-    doField.disabled = true;
-  }*/
