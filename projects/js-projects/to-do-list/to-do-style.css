@@ -1,6 +1,7 @@
 html {
   min-width: 425px;
   font-family: 'Handlee', cursive;
+
   /*color: #292929;*/
 }
 
@@ -52,15 +53,18 @@ input[type = submit] {
 }
 /********/
 
-#list li:nth-child(even) {
-  background: #E5DCB7;
-}
-
 #list li {
   width: 80%;
   list-style-type: none;
   font-size: 1.25em;
-  /*border: 1px solid black;*/
+  /*display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;*/
+}
+
+.spanning {
   
   display: -webkit-flex;
   display: flex;
@@ -73,6 +77,8 @@ input[type = submit] {
   flex: 1
 }
 
+
+
 .chkbtn {
   background: green;
   color: white;
@@ -81,22 +87,17 @@ input[type = submit] {
 }
 
 .delbtn {
-  margin-left: 7px;
   /*border: solid 1px #dcdcdc;*/
   border: none;
   transition: box-shadow 0.3s, border 0.3s;
   color: white;
   background: /*#D75752*/red;
-  /*font-size: 0.6em;*/
+  font-size: 1em;
   
   flex: 0 0;
 }
 
-
-
-.delbtn : focus
-.delbtn . focus
-.delbtn . hover {
-  border: solid 1px #707070;
-  box-shadow: 0 0 5px 1px #969696;
+.strike {
+  text-decoration: line-through;
+  font-weight: bold;
 }
