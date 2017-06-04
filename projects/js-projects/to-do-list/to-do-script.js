@@ -8,10 +8,6 @@ var spanny = document.getElementsByClassName('spaninput');
 
 var i;
 
-function hasClass(element, cls) {
-    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
-}
-
 doField.focus();
 
 function submitItem() {
