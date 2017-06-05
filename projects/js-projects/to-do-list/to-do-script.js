@@ -27,22 +27,11 @@ function submitItem() {
     checkbox.type = 'button';
     checkbox.className = 'chkbtn';
     checkbox.value = '\u2714';
-    checkbox.addEventListener('click', function() { 
-      var boldy = this.parentElement.children;
-      ///////WTF I JUST WANT TO STRIKETHROUGH////////
-      //if (hasClass(boldy, 'strike') !== true) {
-      //  boldy.classList.removeAttribute('strike')
-      //} else {
-        boldy.classList.add('strike');
-      });
-    //});
-    /*  
-      if(boldy.hasClass('strike') !== true) {
-        for (i = 0; i < boldy.length; i++) {
-          boldy[i].classList.add('strike')
-        }
-      }
-    });*/
+    checkbox.addEventListener('click', function (e) {
+      var boldy = this.parentElement.firstChild;
+      if (boldy.classList)
+        boldy.classList.toggle('strike');
+    });
 
     var delBtn = document.createElement('input');
     delBtn.type = 'button';
@@ -71,22 +60,3 @@ function submitItem() {
 }
 
 doSubmit.addEventListener('click', submitItem);
-
-/*
-function strikethrough() {
-//Completes items in list
-for (i = 0; i < spanny.length; i++) {
-  spanny[i].style.textDecoration = "line-through";
-}
-};
-    
-//    .onclick = function() {
-//    alert('hello');
-//    var strike = document.getElementsByClassName('strike');
-//    style.setProperty("text-decoration", "line-through");
-//  }
-//};
-
-var complete2 = document.querySelector('chkbtn');
-complete2.addEventListener('click', strikethrough);
-*/
