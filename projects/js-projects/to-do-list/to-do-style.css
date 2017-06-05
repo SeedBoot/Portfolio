@@ -1,12 +1,11 @@
 html {
   min-width: 425px;
   font-family: 'Handlee', cursive;
-
-  /*color: #292929;*/
 }
 
 .wrapper {
   margin: 0 auto;
+  padding-bottom: 1em;
   width: 80%;
   max-width: 400px;
   min-height:500px;
@@ -24,6 +23,7 @@ h1 {
   text-align: center;
   color: #292929;
 }
+
 /****INPUT****/
 #box {
   margin: 0 auto;
@@ -48,8 +48,21 @@ input[type="text"].focus {
 
 input[type = submit] {
   padding: 0.25em;
+  border: none;
   border-radius: 5px;
+  background: #8695a4;
+  color: white;
   font-family: 'Handlee', cursive;
+  font-size: 1.25em;
+  -webkit-transition: background 0.5s, box-shadow 0.3s;
+  transition: background 0.5s, box-shadow 0.3s;
+}
+
+input[type = submit]:hover,
+input[type = submit]:focus,
+input[type = submit].focus {
+  background: #135ba2;
+  box-shadow: 0 0 5px 1px #969696;
 }
 /********/
 
@@ -57,15 +70,9 @@ input[type = submit] {
   width: 80%;
   list-style-type: none;
   font-size: 1.25em;
-  /*display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  justify-content: space-between;*/
 }
 
 .spanning {
-  
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -77,24 +84,49 @@ input[type = submit] {
   flex: 1
 }
 
-
-
 .chkbtn {
-  background: green;
-  color: white;
   border: none;
+  border-radius: 100%;
+  margin: 1px;
+  color: white;
+  background: green;
   flex: 0 0;
+  -webkit-transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                      transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                      color 0.5s;
+  transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+              color 0.5s,
+}
+
+.chkbtn:hover {
+  background: none;
+  color: green;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .delbtn {
-  /*border: solid 1px #dcdcdc;*/
   border: none;
-  transition: box-shadow 0.3s, border 0.3s;
+  border-radius: 100%;
+  margin: 1px;
   color: white;
-  background: /*#D75752*/red;
+  background: red;
   font-size: 1em;
-  
   flex: 0 0;
+  -webkit-transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                      transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                      color 0.5s;
+  transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+              color 0.5s,
+}
+
+.delbtn:hover {
+  background: none;
+  color: red;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 .strike {
