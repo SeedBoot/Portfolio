@@ -155,8 +155,11 @@ h2 {
 
 .minilinks {
   margin: 0.5em 0.5em 0 0.5em;
-  height: 32px;
   transition: background 0.5s;
+}
+
+.minilinks-h {
+  height: 32px;
 }
 
 .minilinks-round {
@@ -164,11 +167,17 @@ h2 {
 }
 
 .minilinks:hover {
-  background: rgba(39, 159, 39, 0.8);
+  background: rgba(39, 159, 39, 0.7);
 }
+
+/***INDIVIDUAL FONT STYLES***/
 
 .boldness {
   font-weight: bold;
+}
+
+.centerness {
+  text-align: center;
 }
 
 /***ABOUT PAGE***/
@@ -179,6 +188,7 @@ h2 {
 }
 
 .profile {
+  margin: 0 0 0 0.5em;
   border: 2px solid black;
   border-radius: 0.4em;
   float: right;
@@ -186,7 +196,29 @@ h2 {
 }
 
 .bio p{
-  float: clear;
+  float: none;
+}
+
+.badge {
+  /*float: none;*/
+  /*width: 50%;*/
+  margin: 0 auto;
+  text-align: center; 
+}
+
+.badge img {
+  margin: 0 2em;
+}
+
+.con {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.con-links {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /***RESPONSIVE-NESS-ING-LY-ER****/
