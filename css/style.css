@@ -221,6 +221,17 @@ h2 {
   text-align: center;
 }
 
+.email-links {
+  width: 80%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.wide-50 {
+  width: 50%;
+  margin: 1em 0;
+}
+
 /***RESPONSIVE-NESS-ING-LY-ER****/
 
 /***LARGE MOBILE DEVICE***/
