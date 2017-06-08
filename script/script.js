@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  //INDEX TILES//
   $('.mob-menu').on('click', function () {
     $('.nav').slideToggle(400);
   });
@@ -12,13 +12,13 @@ $(document).ready(function () {
 
   $('#photolink').on('click', function () {
     $(this).fadeTo(400, 0.01, function () {
-      window.location = ('photo-portfolio.html');
+      window.location = ('other-portfolio.html');
     });
   });
-
-  $('#graphiclink').on('click', function () {
+  //WEBDEV TILES//
+  $('#todo').on('click', function () {
     $(this).fadeTo(400, 0.01, function () {
-      window.location = ('graphic-portfolio.html');
+      window.location = ('projects/to-do-list/to-do-index.html');
     });
   });
 

@@ -36,21 +36,27 @@ li {
   font-family: 'Open Sans', sans-serif;
 }
 
+/***INDIVIDUAL FONT STYLES***/
+.boldness {
+  font-weight: bold;
+}
+
+.centerness {
+  text-align: center;
+}
+/**********/
+
 .name {
   margin: 0;
   text-align: center;
 }
 
+/*****MENU*****/
 .menu {
   text-align: center;
 }
 
-/**/
-/******MENU******/
-
-/*HAMBURGER*/
-/**/
-
+/*****HAMBURGER*****/
 .mob-menu {
   width: 30px;
   display: block;
@@ -68,8 +74,7 @@ li {
   border-radius: 2px;
 }
 
-/**/
-
+/*****NAVIGATION*****/
 .nav {
   padding: 0;
   display: none;
@@ -92,10 +97,9 @@ li {
   text-decoration: none;
   cursor: pointer;
 }
+/**********/
 
-/******END OF MENU******/
-/**/
-
+/*****INDEX STYLES*****/
 .content {
   margin: 40px auto 0;
 }
@@ -118,13 +122,11 @@ li {
 .menu-image {
   width: 100%;
   border-top-right-radius: 20px 20px;
-  /*border-bottom-right-radius: 20px 20px;*/
   border-top-left-radius: 20px 20px;
   margin-bottom: -0.18em;
 }
 
 .about {
-  /*padding: 1em;*/
   margin: 0 auto;
   border-bottom-right-radius: 20px 20px;
   width: 100%;
@@ -132,56 +134,13 @@ li {
   text-align: center;
 }
 
-.about p,
-h2 {
+.about p {
   margin: 0;
+  padding: 0.2em;
 }
+/**********/
 
-.foot {
-  border-top: 3px double #7c7c7c;
-  font-family: 'Inknut Antiqua', serif;
-  text-align: center;
-  background: rgba(256, 256, 256, 0.9);
-}
-
-.foot p {
-  margin: 0;
-}
-
-.links {
-  width: ;
-  margin: 0 auto;
-}
-
-.minilinks {
-  margin: 0.5em 0.5em 0 0.5em;
-  transition: background 0.5s;
-}
-
-.minilinks-h {
-  height: 32px;
-}
-
-.minilinks-round {
-  border-radius: 100%;
-}
-
-.minilinks:hover {
-  background: rgba(39, 159, 39, 0.7);
-}
-
-/***INDIVIDUAL FONT STYLES***/
-
-.boldness {
-  font-weight: bold;
-}
-
-.centerness {
-  text-align: center;
-}
-
-/***ABOUT PAGE***/
-
+/***ABOUT STYLES***/
 .bio {
   margin: 1.5em auto 0;
   width: 80%;
@@ -200,8 +159,6 @@ h2 {
 }
 
 .badge {
-  /*float: none;*/
-  /*width: 50%;*/
   margin: 0 auto;
   text-align: center; 
 }
@@ -229,13 +186,47 @@ h2 {
 
 .wide-50 {
   width: 50%;
-  margin: 1em 0;
+  margin: 1em 0 0.5em 0;
+}
+/**********/
+
+/*****FOOTER STYLING*****/
+.foot {
+  border-top: 3px double #7c7c7c;
+  font-family: 'Inknut Antiqua', serif;
+  text-align: center;
+  background: rgba(256, 256, 256, 0.9);
 }
 
-/***RESPONSIVE-NESS-ING-LY-ER****/
+.foot p {
+  margin: 0;
+}
 
-/***LARGE MOBILE DEVICE***/
+.links {
+  margin: 0 auto;
+}
 
+.minilinks {
+  margin: 0.5em 0.5em 0 0.5em;
+  transition: background 0.5s;
+}
+
+.minilinks-h {
+  height: 32px;
+}
+
+.minilinks-round {
+  border-radius: 100%;
+}
+
+.minilinks:hover {
+  background: rgba(39, 159, 39, 0.7);
+}
+/**********/
+
+/*****RESPONSIVE STYLES*****/
+
+/*****LARGE MOBILE DEVICE*****/
 @media screen and (min-width: 36em) {
   .mob-menu {
     display: block;
@@ -250,7 +241,6 @@ h2 {
 }
 
 /***DESKTOP***/
-
 @media screen and (min-width: 49em) {
   .mob-menu {
     display: none;
@@ -264,7 +254,6 @@ h2 {
 }
 
 /***even BIGGER desktop***/
-
 @media screen and (min-width: 60em) {
   .flexbod,
   .foot {
