@@ -1,0 +1,141 @@
+html {
+  min-width: 425px;
+  font-family: 'Handlee', cursive;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding-bottom: 1em;
+  width: 80%;
+  max-width: 400px;
+  min-height:500px;
+  background-color: #fff5cc;
+  border-radius: 2px;
+  box-shadow: 2px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.pin {
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #292929;
+}
+
+/****INPUT****/
+#box {
+  margin: 0 auto;
+  width: 75%;
+}
+
+input[type = text] {
+  border-radius: 3px;
+  padding: 0.25em;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  background-color: rgba(250, 250, 250, 0.5);
+  font-family: 'Handlee', cursive;
+  font-size: 1.25em;
+}
+
+input[type="text"]:focus,
+input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type = submit] {
+  padding: 0.25em;
+  border: none;
+  border-radius: 5px;
+  background: #8695a4;
+  color: white;
+  font-family: 'Handlee', cursive;
+  font-size: 1.25em;
+  -webkit-transition: background 0.5s, box-shadow 0.3s;
+  transition: background 0.5s, box-shadow 0.3s;
+}
+
+input[type = submit]:hover,
+input[type = submit]:focus,
+input[type = submit].focus {
+  background: #135ba2;
+  box-shadow: 0 0 5px 1px #969696;
+}
+/********/
+
+#list li {
+  width: 80%;
+  list-style-type: none;
+  font-size: 1.25em;
+}
+
+.spanning {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.spaninput {
+  flex: 1
+}
+
+.chkbtn {
+  border: none;
+  border-radius: 100%;
+  margin: 1px;
+  color: white;
+  background: green;
+  flex: 0 0;
+  -webkit-transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                      transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                      color 0.5s;
+  transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+              color 0.5s,
+}
+
+.chkbtn:active,
+.chkbtn:focus,
+.chkbtn:hover {
+  background: none;
+  color: green;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  outline: 0;
+}
+
+.delbtn {
+  border: none;
+  border-radius: 100%;
+  margin: 1px;
+  color: white;
+  background: red;
+  font-size: 1em;
+  flex: 0 0;
+  -webkit-transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+                      transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+                      color 0.5s;
+  transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+              transform 1s cubic-bezier(0.165, 0.84, 0.44, 1),
+              color 0.5s,
+}
+
+.delbtn:active,
+.delbtn:focus,
+.delbtn:hover {
+  background: none;
+  color: red;
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  outline: 0;
+}
+
+.strike {
+  text-decoration: line-through;
+  font-weight: bold;
+}
