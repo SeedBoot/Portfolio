@@ -1,5 +1,5 @@
 var doField = document.querySelector('.dofield');
-var doSubmit = document.querySelector('.dosubmit');
+var myForm = document.getElementsByClassName('myForm')[0];
 
 doField.focus();
 
@@ -8,7 +8,7 @@ function submitItem() {
 
   if (userItem !== "") {
     var list = document.getElementById('list');
-    var li = document.createElement('LI');
+    var li = document.createElement('li');
     
     var spanning = document.createElement('span');
       spanning.className = 'spanning';
@@ -22,8 +22,9 @@ function submitItem() {
       checkbox.value = '\u2714';
       checkbox.addEventListener('click', function (e) {
         var boldy = this.parentElement.firstChild;
-        if (boldy.classList)
+        if (boldy.classList) {
           boldy.classList.toggle('strike');
+        };
       });
     
     var delBtn = document.createElement('input');
@@ -52,4 +53,7 @@ function submitItem() {
   }
 }
 
-doSubmit.addEventListener('click', submitItem);
+myForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // <= this stops form reloading the page
+    submitItem();
+});

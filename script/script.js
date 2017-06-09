@@ -15,11 +15,14 @@ $(document).ready(function () {
       window.location = ('other-portfolio.html');
     });
   });
+  
   //WEBDEV TILES//
   $('#todo').on('click', function () {
-    $(this).fadeTo(400, 0.01, function () {
-      window.location = ('projects/to-do-list/to-do-index.html');
-    });
+    window.open('projects/to-do-list/to-do-index.html');
+  });
+  
+  $('#jg-site').on('click', function () {
+    window.open('projects/jg/index.html');
   });
 
 });

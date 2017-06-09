@@ -99,11 +99,14 @@ input[type = submit].focus {
               color 0.5s,
 }
 
+.chkbtn:active,
+.chkbtn:focus,
 .chkbtn:hover {
   background: none;
   color: green;
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
+  outline: 0;
 }
 
 .delbtn {
@@ -122,11 +125,14 @@ input[type = submit].focus {
               color 0.5s,
 }
 
+.delbtn:active,
+.delbtn:focus,
 .delbtn:hover {
   background: none;
   color: red;
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
+  outline: 0;
 }
 
 .strike {
