@@ -32,8 +32,10 @@ function submitItem() {
       delBtn.className = 'delbtn';
       delBtn.value = '\u00D7';
       delBtn.addEventListener('click', function (e) {
-        var listy = this.parentElement;
-        listy.style.display = 'none';
+        //var listy = this.parentElement;
+        //listy.style.display = 'none';
+        var listy = this.parentElement.parentElement;
+        listy.remove(listy);
       }, false);
 
     list.appendChild(li);
@@ -52,8 +54,40 @@ function submitItem() {
     doField.focus();
   }
 }
-
+/*
 myForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // <= this stops form reloading the page
+    e.preventDefault();
     submitItem();
 });
+
+function storageAvailable(type) {
+    try {
+        var storage = window[type],
+            x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            storage.length !== 0;
+    }
+}
+
+if (storageAvailable('localStorage')) {
+	// Yippee! We can use localStorage awesomeness
+}
+else {
+	// Too bad, no localStorage for us
+}
+*/

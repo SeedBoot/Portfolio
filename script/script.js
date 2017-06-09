@@ -21,6 +21,10 @@ $(document).ready(function () {
     window.open('projects/to-do-list/to-do-index.html');
   });
   
+  $('#this-site').on('click', function () {
+    window.open('index.html');
+  });
+  
   $('#jg-site').on('click', function () {
     window.open('projects/jg/index.html');
   });
