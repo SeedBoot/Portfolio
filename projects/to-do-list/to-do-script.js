@@ -8,6 +8,7 @@ function submitItem() {
 
   if (userItem !== "") {
     var list = document.getElementById('list');
+    
     var li = document.createElement('li');
     
     var spanning = document.createElement('span');
@@ -54,12 +55,12 @@ function submitItem() {
     doField.focus();
   }
 }
-/*
+
 myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     submitItem();
 });
-
+/*
 function storageAvailable(type) {
     try {
         var storage = window[type],
@@ -90,4 +91,12 @@ if (storageAvailable('localStorage')) {
 else {
 	// Too bad, no localStorage for us
 }
+*/
+/*
+//var list = document.getElementById('list');
+//var listChild = document.querySelectorAll('li');
+
+localStorage.setItem('chCh', JSON.stringify(document.querySelectorAll('li')));
+
+var retrieval = if (localStorage){localStorage.getItem('chCh')};
 */
