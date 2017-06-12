@@ -3,6 +3,11 @@ var myForm = document.getElementsByClassName('myForm')[0];
 
 doField.focus();
 
+/*
+// try get from localStorage, and if not there, fall back to empty array.
+JSON.parse(localStorage.getItem('items')) || [];
+*/
+
 function submitItem() {
   var userItem = String(doField.value);
 
@@ -45,6 +50,13 @@ function submitItem() {
     spanInput.appendChild(document.createTextNode(userItem));
     spanning.appendChild(checkbox);
     spanning.appendChild(delBtn);
+    
+    /*
+    var listC = document.querySelector('li');
+    if (localStorage){
+      localStorage.setItem('items', JSON.stringify(listC));
+    };
+    */
 
     doField.value = '';
     doField.focus();
@@ -60,43 +72,10 @@ myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     submitItem();
 });
+
 /*
-function storageAvailable(type) {
-    try {
-        var storage = window[type],
-            x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch(e) {
-        return e instanceof DOMException && (
-            // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            storage.length !== 0;
-    }
-}
-
-if (storageAvailable('localStorage')) {
-	// Yippee! We can use localStorage awesomeness
-}
-else {
-	// Too bad, no localStorage for us
-}
-*/
-/*
-//var list = document.getElementById('list');
-//var listChild = document.querySelectorAll('li');
-
-localStorage.setItem('chCh', JSON.stringify(document.querySelectorAll('li')));
-
-var retrieval = if (localStorage){localStorage.getItem('chCh')};
+var listC = document.querySelector('li');
+    if (localStorage){
+      localStorage.setItem('items', JSON.stringify(listC));
+    };
 */
