@@ -99,7 +99,7 @@ li {
 }
 /**********/
 
-/*****INDEX STYLES*****/
+/*****TILE STYLE*****/
 .content {
   margin: 40px auto 0;
 }
@@ -111,19 +111,24 @@ li {
   border-bottom-right-radius: 20px 20px;
   border-top-left-radius: 20px 20px;
   width: 80%;
-  cursor: pointer;
-  /*transition: all .4s ease;*/
+  background: white;
+  text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -webkit-transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .tile:hover {
-  box-shadow: 0 4px 10px 3px rgba(0,0,0,0.3);
-  -webkit-transform: scale(1.03);
-  transform: scale(1.03);
+  box-shadow: 0 3px 8px 2px rgba(0,0,0,0.3);
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
 }
 
+.tile figcaption {
+  padding: 0.2em;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+}
 
 /*****!COMING SOON TILE DISABLED*****/
 .coming-soon {
@@ -133,9 +138,19 @@ li {
 
 .menu-image {
   width: 100%;
+  cursor: pointer;
   border-top-right-radius: 20px 20px;
   border-top-left-radius: 20px 20px;
   margin-bottom: -0.18em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-image:hover {
+  box-shadow: 0 4px 10px 3px rgba(0,0,0,0.3);
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .about {
@@ -211,7 +226,6 @@ li {
 .message-input {
   width: 75%;
   height: 5em;
-  
   padding: 0.35em 0.5em;
   border: 1px solid #279f27;
   background-color: white;
@@ -257,7 +271,7 @@ li {
 /*****RESPONSIVE STYLES*****/
 
 /*****LARGE MOBILE DEVICE*****/
-@media screen and (min-width: 36em) {
+@media screen and (min-width: 30em) {
   .mob-menu {
     display: block;
   }
@@ -271,7 +285,7 @@ li {
 }
 
 /***DESKTOP***/
-@media screen and (min-width: 49em) {
+@media screen and (min-width: 47em) {
   .mob-menu {
     display: none;
   }
@@ -284,7 +298,7 @@ li {
 }
 
 /***even BIGGER desktop***/
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 56em) {
   .flexbod,
   .foot {
     margin: 0 auto;
