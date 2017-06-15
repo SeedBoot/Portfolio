@@ -44,19 +44,18 @@ li {
 .centerness {
   text-align: center;
 }
-/**********/
 
+/*******MENU*******/
 .name {
   margin: 0;
   text-align: center;
 }
 
-/*****MENU*****/
 .menu {
   text-align: center;
 }
 
-/*****HAMBURGER*****/
+/***HAMBURGER***/
 .mob-menu {
   margin: 0 auto;
   width: 30px;
@@ -82,14 +81,17 @@ li {
 }
 
 .nav li {
-  margin-top: 0.5em;
-  padding: 0.25em;
-  display: block;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  padding: 0.1em;
   list-style-type: none;
   text-align: center;
 }
 
 .button {
+  display: table-cell;
+  width: auto;
   padding: 0.35em 0.5em;
   border: 1px solid #279f27;
   border-radius: 5px;
@@ -98,18 +100,30 @@ li {
   text-decoration: none;
   cursor: pointer;
   
-  -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:         all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .button:hover,
 .button:focus {
-  transform: translateY(2em);
-  box-shadow: 0 0 3px 2px rgba(16,53,18,0.3);
-  
+  box-shadow: 0 9px 8px -4px rgba(16, 53, 18, 0.5);
+  background: #279f27;
+  color: white;
 }
-/**********/
 
+.btnselect {
+  display: table-cell;
+  width: auto;
+  padding: 0.35em 0.5em;
+  border: 1px solid #279f27;
+  border-radius: 5px;
+  background: #279f27;
+  color: white;
+  cursor: default;
+  text-decoration: none;
+  box-shadow: inset 4px 5px 8px -1px rgba(16, 53, 18, 0.6);
+}
+/*****END MENU*****/
 /*****TILE STYLE*****/
 .cont1 {
   margin: 3em auto 0;
@@ -245,7 +259,6 @@ li {
   color: #279f27;
   text-decoration: none;
 }
-/**********/
 
 /*****FOOTER STYLING*****/
 .foot {
@@ -279,11 +292,9 @@ li {
 .minilinks:hover {
   background: rgba(39, 159, 39, 0.7);
 }
-/**********/
 
-/*****RESPONSIVE STYLES*****/
-
-/*****LARGE MOBILE DEVICE*****/
+/*******RESPONSIVE STYLES*******/
+/***LARGE MOBILE DEVICE***/
 @media screen and (min-width: 30em) {
   .mob-menu {
     display: block;
@@ -292,6 +303,7 @@ li {
     display: none;
   }
   .nav li {
+    width: auto;
     padding: 0;
     display: inline-block;
   }
