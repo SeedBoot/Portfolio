@@ -1,5 +1,4 @@
 var bulb = document.getElementById('bulb');
-var box = document.querySelector('p');
 var switchBulb = document.getElementById('switch');
 
 switchBulb.addEventListener('click', turnOn);
