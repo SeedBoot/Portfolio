@@ -1,7 +1,30 @@
+/*
+#000040 darker blue
+#000080 dark blue
+*/
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+        background: #000040;
+}
+
+button {
+    cursor: pointer;
+}
+
+#wall {
+    min-height: 100%;
+}
+
 #lightbulb {
     margin: 0 auto;
     width: 70%;
-
 }
 
 div, button {
@@ -9,25 +32,55 @@ div, button {
     text-align: center;
 }
 
-#bulb {
-    width: 100px;
-    height: 100px;
-    border: 2px solid black;
-    border-radius: 100%;
+#wire {
+    width: 0;
+    height: 85px;
+    border: 2px solid rgb(30, 30, 30);
+    z-index: 7;
 }
 
 #box {
-    width: 75px;
-    height: 75px;
-    background: brown;
+    width: 50px;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 40px solid rgb(30, 30, 30);
+    position: relative;
+    z-index: 6;
 }
 
-#switch {
-    /*width: 25px;
-    height: 50px;
-    background: black;*/
+#bulb {
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100%;
+    position: relative;
+    top: -13px;
+    z-index: 5;
+}
+
+.bulbCol {
+    background: radial-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(240, 240, 250, 0.2)
+        );
 }
 
 .getlit {
-    background: yellow;
+    background: radial-gradient(
+        at center 20%,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 165, 1)
+        );
+    box-shadow: 0 70px 200px 70px rgba(255, 255, 255, 0.4)
+}
+
+.bgroundgetlit {
+    background: radial-gradient(
+        ellipse at center 80%,
+        #4646b5,
+        #000099
+        ) fixed;
+    /*background: #000080;*/
+    /*background: black;*/
 }
