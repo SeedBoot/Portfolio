@@ -3,11 +3,6 @@ var myForm = document.getElementsByClassName('myForm')[0];
 
 doField.focus();
 
-/*
-// try get from localStorage, and if not there, fall back to empty array.
-JSON.parse(localStorage.getItem('items')) || [];
-*/
-
 function submitItem() {
   var userItem = String(doField.value);
 
@@ -50,13 +45,6 @@ function submitItem() {
     spanInput.appendChild(document.createTextNode(userItem));
     spanning.appendChild(checkbox);
     spanning.appendChild(delBtn);
-    
-    /*
-    var listC = document.querySelector('li');
-    if (localStorage){
-      localStorage.setItem('items', JSON.stringify(listC));
-    };
-    */
 
     doField.value = '';
     doField.focus();
@@ -72,10 +60,3 @@ myForm.addEventListener('submit', function(e) {
     e.preventDefault();
     submitItem();
 });
-
-/*
-var listC = document.querySelector('li');
-    if (localStorage){
-      localStorage.setItem('items', JSON.stringify(listC));
-    };
-*/
