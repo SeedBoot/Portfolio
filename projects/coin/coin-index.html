@@ -2,52 +2,26 @@
 <html>
     <head>
         <title>Coin flip!</title>
-        <style>
-            body{
-                width: 50%;
-                max-width: 800px;
-                min-width: 480px;
-                margin: 0 auto;
-            }
-
-            .coin {
-                width: 50px;
-                height: 50px;
-                border-radius: 100%;
-                background: goldenrod;
-            }
-
-        </style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="coin-style.css" type="text/css">
     </head>
     <body>
-        <div class="coin">
+        <div class="flip-container">
+	        <div class="flipper">
+		        <div class="front">
+		        	<p class="coinword">Care to flip?</p>
+	        	</div>
+	        	<div class="back">
+	        		<p class="coinword">Thought so...</p>
+		        </div>
+	        </div>
         </div>
-        <button type="button" class="trigger">Flip me!</button>
         <div class="box">
             <p class="result"></p>
-            <p class="heads">Heads:</p>
-            <p class="tails">Tails:</p>
+            <p class="heads">Heads: </p>
+            <p class="tails">Tails: </p>
         </div>
-
-        <script>
-            var flippy =  Math.floor(Math.random()*2);
-            var trigger = document.querySelector('.trigger');
-            var flipResult = document.querySelector('.result');
-            var heads = document.querySelector('.heads');
-            var tails = document.querySelector('.tails');
-            
-            function coinFlip(){
-                if(flippy === 0) {
-                    flipResult.textContent('Heads!');
-                } else {
-                    flipResult.textContent('Tails!');
-                };
-            };
-            
-            trigger.addEventListener('click', function() {
-                coinFlip();
-            });
-
-        </script>
+        <script src="coin-script.js"></script>
     </body>
 </html>
