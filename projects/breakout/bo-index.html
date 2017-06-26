@@ -26,26 +26,28 @@
     
     var canvas = document.getElementById('myCanvas');
     var ctx = canvas.getContext('2d');
+
+    var score = 0;
     
     //defines the ball
     var ballRadius = 10;
     var x = canvas.width/2;
     var y = canvas.height/2;
-    var dx = 0.5;
+    var dx = 0.6;
     var dy = 2;
     
     //defines the paddle
     var paddleHeight = 10;
-    var paddleWidth = 75;
+    var paddleWidth = 85;
     var paddleX = (canvas.width-paddleWidth)/2;
     
     //defines the bricks
     var brickRowCount = 4;
     var brickColumnCount = 5;
     var brickWidth = 75;
-    var brickHeight = 15;
+    var brickHeight = 9;
     var brickPadding = 10;
-    var brickOffsetTop = 10;
+    var brickOffsetTop = 25;
     var brickOffsetLeft = 30;
     var bricks = [];
         for(c=0; c<brickColumnCount; c++) {
@@ -71,7 +73,6 @@
             leftPressed = true;
         }
     }
-    
     function keyUpHandler(e) {
         if(e.keyCode == 39) {
             rightPressed = false;
@@ -86,11 +87,29 @@
         for(c=0; c<brickColumnCount; c++){
             for(r=0; r<brickRowCount; r++) {
                 var b = bricks[c][r];
-                if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
-                    dy = -dy;
+                if(b.status == 1) {
+                    if(x > b.x && x < b.x+brickWidth && y > b.y && y < b.y+brickHeight) {
+                        //reverse ball direction and speed up
+                        dy = (-dy * 1.03);
+                        //removes hit brick
+                        b.status = 0;
+                        //adds score
+                        score+= 10;
+                        //changes hex of ball 
+                        color = '#' + ((1<<24) * Math.random() | 0).toString(16);
+                        if(score == (brickRowCount * brickColumnCount)*10 ) {
+                            alert("YOU WIN! YOUR SCORE IS: " + score);
+                            document.location.reload();
+                        }
+                    }
                 }
             }
         }
+    }
+    function drawScore() {
+        ctx.font = '16px Arial';
+        ctx.fillStyle = '#0095DD';
+        ctx.fillText("Score: " + score, 8, 20);
     }
     function drawBall() {
         ctx.beginPath();
@@ -109,7 +128,7 @@
     function drawBricks() {
         for(c=0; c<brickColumnCount; c++) {
             for(r=0; r<brickRowCount; r++) {
-                if(bricks[c][r].status === 1) {
+                if(bricks[c][r].status == 1) {
                     var brickX = (c * (brickWidth + brickPadding)) +brickOffsetLeft;
                     var brickY = (r * (brickHeight + brickPadding)) +   brickOffsetTop;
                     bricks[c][r].x = brickX;
@@ -129,6 +148,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         collisionDetection();
+        drawScore();
         drawBall();
         drawPaddle();
         drawBricks();
@@ -145,7 +165,7 @@
         }
         else if(y + dy > canvas.height-ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
-                dy = (-dy * 1.02);
+                dy = (-dy * 1.005);
             }
             else {
                 alert("GAME OVER");
