@@ -22,12 +22,15 @@
 
 <script>
     //color = '#' + ((1<<24) * Math.random() | 0).toString(16);
+    //Math.round(Math.random()) * 2 - 1
     var color = '#0095DD';
+    var foont = '16px Arial';
     
     var canvas = document.getElementById('myCanvas');
     var ctx = canvas.getContext('2d');
 
     var score = 0;
+    var lives = 5;
     
     //defines the ball
     var ballRadius = 10;
@@ -45,7 +48,7 @@
     var brickRowCount = 4;
     var brickColumnCount = 5;
     var brickWidth = 75;
-    var brickHeight = 9;
+    var brickHeight = 10;
     var brickPadding = 10;
     var brickOffsetTop = 25;
     var brickOffsetLeft = 30;
@@ -109,6 +112,7 @@
                         score+= 10;
                         //changes hex of ball 
                         color = '#' + ((1<<24) * Math.random() | 0).toString(16);
+                        //win condition (*10 adds zero to score... looks super awesome, like you've actually achieved something with your life)
                         if(score == (brickRowCount * brickColumnCount)*10 ) {
                             alert("YOU WIN! YOUR SCORE IS: " + score);
                             document.location.reload();
@@ -119,9 +123,14 @@
         }
     }
     function drawScore() {
-        ctx.font = '16px Arial';
+        ctx.font = foont;
         ctx.fillStyle = '#0095DD';
         ctx.fillText("Score: " + score, 8, 20);
+    }
+    function drawLives() {
+        ctx.font = foont;
+        ctx.fillStyle = '#0095DD';
+        ctx.fillText("Lives: " + lives, canvas.width-65, 20);
     }
     function drawBall() {
         ctx.beginPath();
@@ -154,13 +163,13 @@
             }
         }
     }
-    
     function draw() {
         //clears screen every frame
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         collisionDetection();
         drawScore();
+        drawLives();
         drawBall();
         drawPaddle();
         drawBricks();
@@ -178,10 +187,22 @@
         else if(y + dy > canvas.height-ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
                 dy = (-dy * 1.005);
+                //makes random direction change on x axis
+                dx = (dx += (Math.random()) * 2.7 - 1);
             }
             else {
-                alert("GAME OVER");
-                document.location.reload();
+                lives--;
+                if(!lives) {
+                    alert("GAME OVER! Your score is: " + score);
+                    document.location.reload();
+                }
+                else {
+                x = canvas.width/2;
+                y = canvas.height/2;
+                dx = 0.6;
+                dy = 2;
+                paddleX = (canvas.width-paddleWidth)/2;
+                }
             }
         }
         
@@ -195,13 +216,14 @@
         
         //each frame, moves ball by dx/dy properties
         x += dx;
-        y += dy; 
+        y += dy;
+
+        //passes control of framerate back to browser. Syncs framerate accordingly
+        requestAnimationFrame(draw);
     }
     
-    //sets interval for the function 'draw' to redraw every 10 milliseconds
-    setInterval(draw, 10);
-    
-    
+    //calls draw function
+    draw();
 </script>
 
 </body>
