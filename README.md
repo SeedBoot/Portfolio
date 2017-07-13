@@ -23,7 +23,7 @@ I am learning:
 - Bootstrap
 - SCSS
 
-##Tools
+## Tools
 I have experience using:
 - Visual Studio Code/ Sublime etc.
 - Github Desktop
