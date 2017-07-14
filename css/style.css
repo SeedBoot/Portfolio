@@ -346,4 +346,9 @@ li {
     width: 40%;
     display: inline-block;
   }
+  .cont1 {
+    display: flex;
+    flex-wrap: wrap;
+		align-items: stretch;
+  }
 }
