@@ -14,16 +14,20 @@ var divideX = 2;
 var divideY = canvas.height;
 
 //defines the ball
-var ball = 8
+var ball = 8;
 var ballX = (canvas.width-ball)/2;
 var ballY = (canvas.height-ball)/2;
 var xBallSpeed = 2;
 var yBallSpeed = 2;
+//defines ball collision point
+//var ballCollision = (ballY+4);
 
 //defines the paddles
 var paddleHeight = 50;
 var paddleWidth = 7;
+var player1X = 10;
 var player1Y = (canvas.height-paddleHeight)/2;
+var player2X = (470-paddleWidth);
 var player2Y = (canvas.height-paddleHeight)/2;
 
 //controls
@@ -90,14 +94,14 @@ function drawDivide() {
 //player and ball shapes
 function drawPlayer1() {
     ctx.beginPath();
-    ctx.rect(10, player1Y, paddleWidth, paddleHeight);
+    ctx.rect(player1X, player1Y, paddleWidth, paddleHeight);
     ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
 }
 function drawPlayer2() {
     ctx.beginPath();
-    ctx.rect((470-paddleWidth), player2Y, paddleWidth, paddleHeight);
+    ctx.rect(player2X, player2Y, paddleWidth, paddleHeight);
     ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
@@ -113,12 +117,12 @@ function drawBall() {
 function drawPlayer1Score() {
     ctx.font = '24px Courier';
     ctx.fillStyle = color;
-    ctx.fillText('test', (canvas.width/2)-55, 25, 50);
+    ctx.fillText(player1Score, (canvas.width/2)-35, 25, 50);
 }
 function drawPlayer2Score() {
     ctx.font = '24px Courier';
     ctx.fillStyle = color;
-    ctx.fillText('test', (canvas.width/2)+5, 25, 50);
+    ctx.fillText(player2Score, (canvas.width/2)+5, 25, 50);
 }
 
 function draw() {
@@ -137,14 +141,64 @@ function draw() {
     drawPlayer1Score();
     drawPlayer2Score();
 
-    //make ball collide with y axis
+    // IF      // make ball collide with y axis
+    // ELSE IF // player 1 paddle collsion
+    // ELSE IF // player 2 paddle collision
     if(ballY + yBallSpeed > canvas.height-ball || ballY + yBallSpeed < 0) {
         yBallSpeed = -yBallSpeed;
     }
+    else if (ballX + xBallSpeed < player1X + paddleWidth) {
+      if (ballY > player1Y && ballY < player1Y + paddleHeight) {
+        xBallSpeed = -xBallSpeed * 1.03; // multiplier optional
+        yBallSpeed = yBallSpeed * 1.03;
+      }
+    }
+    else if ((ballX + ball) + xBallSpeed > player2X) {
+      if ((ballY + ball) > player2Y && (ballY + ball) < player2Y + paddleHeight) {
+        xBallSpeed = -xBallSpeed * 1.03; // multiplier optional
+        yBallSpeed = yBallSpeed * 1.03;
+      }
+    }
 
-    //TEMP ball collide with x
-    if(ballX + xBallSpeed > canvas.width-ball || ballX + xBallSpeed < 0) {
-        xBallSpeed = -xBallSpeed;
+    // player 1 score
+    if(ballX + xBallSpeed > canvas.width-ball) {
+      if(player1Score !== 9) {
+        player1Score += 1;
+        ballX = (canvas.width-ball)/2;
+        ballY = (canvas.height-ball)/2;
+        if(player1Score >= 5) {
+          xBallSpeed += 0.2;
+          yBallSpeed += 0.2;
+        }
+        else {
+        xBallSpeed = 2;
+        yBallSpeed = 2;
+        }
+      }
+      else {
+        alert("GAME OVER! Player 1 wins!")
+        document.location.reload();
+      }
+    }
+    //player 2
+    else if (ballX + xBallSpeed < 0) {
+      if(player2Score !== 9) {
+        player2Score += 1;
+        ballX = (canvas.width-ball)/2;
+        ballY = (canvas.height-ball)/2;
+        if(player2Score >= 5) {
+          xBallSpeed += 0.2;
+          yBallSpeed += 0.2;
+        }
+        else {
+        xBallSpeed = 2;
+        yBallSpeed = 2;
+        }
+      }
+      else {
+        alert("GAME OVER! Player 2 wins!")
+        document.location.reload();
+      }
     }
 
     //paddle speed and will collide with frame
@@ -156,7 +210,7 @@ function draw() {
         player1Y += 7;
     }
     //player2
-    if(upPressed && player2Y > wallY) {
+    if(upPressed && player2Y > wallsY) {
         player2Y -= 7;
     }
     else if( downPressed && player2Y < canvas.height - (paddleHeight-wallsY) ) {
@@ -166,7 +220,7 @@ function draw() {
     ballX += xBallSpeed;
     ballY += yBallSpeed;
 
-    requestAnimationFrame(draw);
+      requestAnimationFrame(draw);
 }
 
 draw();
