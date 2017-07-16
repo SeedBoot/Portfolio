@@ -117,12 +117,12 @@ function drawBall() {
 function drawPlayer1Score() {
     ctx.font = '24px Courier';
     ctx.fillStyle = color;
-    ctx.fillText(player1Score, (canvas.width/2)-35, 25, 50);
+    ctx.fillText(player1Score, canvas.width * 0.25, 25);
 }
 function drawPlayer2Score() {
     ctx.font = '24px Courier';
     ctx.fillStyle = color;
-    ctx.fillText(player2Score, (canvas.width/2)+5, 25, 50);
+    ctx.fillText(player2Score, canvas.width * 0.75, 25);
 }
 
 function draw() {
@@ -167,8 +167,8 @@ function draw() {
         ballX = (canvas.width-ball)/2;
         ballY = (canvas.height-ball)/2;
         if(player1Score >= 5) {
-          xBallSpeed += 0.2;
-          yBallSpeed += 0.2;
+          xBallSpeed = 3;
+          yBallSpeed = 3;
         }
         else {
         xBallSpeed = 2;
@@ -187,8 +187,8 @@ function draw() {
         ballX = (canvas.width-ball)/2;
         ballY = (canvas.height-ball)/2;
         if(player2Score >= 5) {
-          xBallSpeed += 0.2;
-          yBallSpeed += 0.2;
+          xBallSpeed = 3;
+          yBallSpeed = 3;
         }
         else {
         xBallSpeed = 2;
