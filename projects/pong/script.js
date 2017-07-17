@@ -241,6 +241,7 @@ function draw() {
 /**
 **** paddle speed and collision with frame
  **/
+ 
 //* Player 1
   if (wPressed && player1Y > wallsY) {
     player1Y -= 5;
