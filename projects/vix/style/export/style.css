@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0; }
+
+.navbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center; }
+
+.title-name {
+  margin: 1em;
+  flex-grow: 1; }
+
+.menu {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1; }
+
+.menu-items {
+  padding: 0.25em 0;
+  border: 1px solid black;
+  margin: 0.06em;
+  flex-grow: 1; }
+  .menu-items a {
+    text-decoration: none; }
+
+.front-poster {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 420px;
+  background: url(../../images/massage_1000.jpg);
+  background-size: cover;
+  overflow-x: hidden;
+  background-position: bottom center; }
+
+@media screen and (min-width: 23em) {
+  .menu {
+    flex-direction: row; }
+
+  .front-poster {
+    background-position: bottom right; } }
+@media screen and (min-width: 45em) {
+  .navbar {
+    flex-wrap: nowrap; }
+
+  .title-name {
+    flex-grow: 0; }
+
+  .menu {
+    flex-grow: 1; }
+
+  .front-poster {
+    min-height: 500px; } }
+@media screen and (min-width: 64em) {
+  .front-poster {
+    height: 639px;
+    width: 100%;
+    max-width: 1000px; } }
+
+/*# sourceMappingURL=style.css.map */
