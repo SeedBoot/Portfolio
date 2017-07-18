@@ -2,12 +2,35 @@ html, body {
   margin: 0;
   padding: 0; }
 
+/***HAMBURGER***/
+.mob-menu {
+  margin: 0 auto;
+  width: 30px;
+  display: block;
+  z-index: 1;
+  cursor: pointer; }
+  .mob-menu .line {
+    margin-top: 3px;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    background: #279f27;
+    display: block; }
+
 .navbar {
   display: flex;
   align-items: baseline;
   justify-content: center;
   flex-wrap: wrap;
-  text-align: center; }
+  text-align: center;
+  /*position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);*/ }
+  .navbar .collapsed {
+    display: none; }
 
 .title-name {
   margin: 1em;
@@ -15,6 +38,7 @@ html, body {
 
 .menu {
   padding: 0;
+  margin-bottom: 0;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +68,7 @@ html, body {
 
   .front-poster {
     background-position: bottom right; } }
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 35em) {
   .navbar {
     flex-wrap: nowrap; }
 
