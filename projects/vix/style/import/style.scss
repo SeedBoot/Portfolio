@@ -1,33 +1,25 @@
-//color var
-$color-highlight: rgb(241, 228, 220);
-$color-shadow: rgb(3, 3, 3);
+@import 'config/_var.scss';
 
 html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  font-family: $font-main;
+  color: $color-shadow;
 }
 
 body {
   background: linear-gradient(to bottom, $color-highlight, $color-shadow);
 }
 
+a {
+  text-decoration: none;
+  color: $color-shadow;
+}
+
 //
 //menu
 //
-
-/***HAMBURGER***/
-.mob-menu {
-  /*margin: 0 auto;
-  width: 30px;
-  display: block;
-  z-index: 1;*/
-  cursor: pointer;
-  line-height: 40px;
-  padding: 0 20px;
-  border: none;
-  background-color: salmon;
-}
 
 .navbar {
   display: flex;
@@ -36,12 +28,16 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  /*position: fixed;
+  background: $color-menu;
+  border-bottom: 2px solid darken($color-menu, 60%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);*/
+
 
   .collapsed {
   display: none;
@@ -51,34 +47,64 @@ body {
 .title-name {
   margin: 1em;
   flex-grow: 1;
+  font-family: $font-head;
 }
+
+/***HAMBURGER***/
+.mob-menu {
+  width: 30px;
+  z-index: 1;
+  padding: 2px 15px;
+  border: 1px solid darken($color-button, 70%);
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  //line-height: 20px;
+  background-color: $color-button;
+
+  .line {
+    margin: 0.25em 0;
+    //border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    background: black;
+    display: block;
+  }
+
+}
+//
 
 .menu {
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   flex-grow: 1;
+  align-items: stretch;
 }
 
 .menu-items {
   padding: 0.25em 0;
-  border: 1px solid black;
+  border: 1px solid darken($color-button, 70%);
+  border-radius: 5px;
   margin: 0.06em;
+  width: 100%;
   flex-grow: 1;
-
-  a {
-    text-decoration: none;
-  }
+  background: $color-button;
 }
 
 //
 //end menu
 //
 
+.main {
+  margin-top: 7em;
+}
+
 .front-poster {
+  border-radius: 10px;
   margin: 0 auto;
   width: 100%;
   min-height: 420px;
@@ -88,10 +114,6 @@ body {
   background-position: bottom center;
 }
 
-$media-sml: 23em;
-$media-med: 35em;
-$media-large: 64em;
-
 @media screen and (min-width: $media-sml) {
   .navbar {
     flex-direction: column;
@@ -100,6 +122,10 @@ $media-large: 64em;
 
   .menu {
     flex-direction: row;
+  }
+
+  .menu-items {
+    width: auto;
   }
 
   .front-poster {
