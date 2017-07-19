@@ -1,7 +1,15 @@
+//color var
+$color-highlight: rgb(241, 228, 220);
+$color-shadow: rgb(3, 3, 3);
 
 html, body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, $color-highlight, $color-shadow);
 }
 
 //
@@ -10,25 +18,21 @@ html, body {
 
 /***HAMBURGER***/
 .mob-menu {
-  margin: 0 auto;
+  /*margin: 0 auto;
   width: 30px;
   display: block;
-  z-index: 1;
+  z-index: 1;*/
   cursor: pointer;
-
-  .line {
-  margin-top: 3px;
-  border-radius: 2px;
-  width: 100%;
-  height: 4px;
-  background: #279f27;
-  display: block;
-  }
+  line-height: 40px;
+  padding: 0 20px;
+  border: none;
+  background-color: salmon;
 }
 
 .navbar {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
@@ -41,8 +45,7 @@ html, body {
 
   .collapsed {
   display: none;
-}
-
+  }
 }
 
 .title-name {
@@ -90,6 +93,11 @@ $media-med: 35em;
 $media-large: 64em;
 
 @media screen and (min-width: $media-sml) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .menu {
     flex-direction: row;
   }
@@ -100,13 +108,22 @@ $media-large: 64em;
 }
 
 @media screen and (min-width: $media-med) {
-
   .navbar {
     flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+
+    .collapsed {
+      display: flex;
+    }
   }
 
   .title-name {
     flex-grow: 0;
+  }
+
+  .mob-menu {
+    display: none;
   }
 
   .menu {
