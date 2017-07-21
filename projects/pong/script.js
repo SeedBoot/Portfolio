@@ -178,7 +178,7 @@ function draw() {
   drawPlayer2Score();
 
 /**
-**** IF      // make ball collide with y axis
+**** IF      // make ball collide with top and bottom
 **** ELSE IF // player 1 paddle collsion
 **** ELSE IF // player 2 paddle collision
  **/
@@ -186,9 +186,31 @@ function draw() {
     yBallSpeed = -yBallSpeed;
   }
   else if (ballX + xBallSpeed < player1X + paddleWidth) {
+    /*
     if (ballY > player1Y && ballY < player1Y + paddleHeight) {
       xBallSpeed = -xBallSpeed * 1.03; // multiplies speed on paddle collision
       yBallSpeed = yBallSpeed * 1.03;
+    }
+    */
+    if(ballY + 4 > player1Y && ballY < player1Y + 10) {
+      xBallSpeed = -xBallSpeed;
+      yBallSpeed = -2.5;
+    }
+    else if (ballY + 4 > player1Y + 11 && ballY < player1Y + 20) {
+      xBallSpeed = -xBallSpeed;
+      yBallSpeed = -1.25;
+    }
+    else if (ballY + 4 > player1Y + 21 && ballY < player1Y + 30) {
+      xBallSpeed = -xBallSpeed;
+      yBallSpeed = -0;
+    }
+    else if (ballY + 4 > player1Y + 31 && ballY < player1Y + 40) {
+      xBallSpeed = -xBallSpeed;
+      yBallSpeed = 1.25;
+    }
+    else if (ballY + 4 > player1Y + 41 && ballY < player1Y + paddleHeight) {
+      xBallSpeed = -xBallSpeed;
+      yBallSpeed = 2.5;
     }
   }
   else if ((ballX + ball) + xBallSpeed > player2X) {
@@ -241,7 +263,7 @@ function draw() {
 /**
 **** paddle speed and collision with frame
  **/
- 
+
 //* Player 1
   if (wPressed && player1Y > wallsY) {
     player1Y -= 5;
