@@ -20,8 +20,8 @@ I am proficient in:
 I am learning:
 - JavaScript
 - jQuery
-- Bootstrap
 - SCSS
+- Bootstrap
 
 ## Tools
 I have experience using:
@@ -31,8 +31,7 @@ I have experience using:
 
 I have some experience using:
 - Command prompt
-- Node.js
-- Ruby
+- Node.js/ Ruby/ NPM
 - Sass
 
 #### Thanks for reading!
