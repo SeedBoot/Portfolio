@@ -12,6 +12,9 @@ a {
   text-decoration: none;
   color: #030303; }
 
+/*
+**menu
+*/
 .navbar {
   display: flex;
   flex-direction: column;
@@ -28,15 +31,30 @@ a {
   left: 0;
   z-index: 999;
   width: 100%; }
+  @media (min-width: 23em) {
+    .navbar {
+      flex-direction: column;
+      align-items: center; } }
+  @media (min-width: 35em) {
+    .navbar {
+      flex-wrap: nowrap;
+      flex-direction: row;
+      align-items: baseline; } }
   .navbar .collapsed {
     display: none; }
+    @media (min-width: 35em) {
+      .navbar .collapsed {
+        display: flex; } }
 
 .title-name {
   margin: 1em;
   flex-grow: 1;
   font-family: Dancing Script, cursive; }
+  @media (min-width: 35em) {
+    .title-name {
+      flex-grow: 0; } }
 
-/***HAMBURGER***/
+/***MOBILE MENU***/
 .mob-menu {
   width: 25px;
   z-index: 1;
@@ -46,6 +64,9 @@ a {
   margin-bottom: 0.5em;
   cursor: pointer;
   background-color: #dcf1dc; }
+  @media (min-width: 35em) {
+    .mob-menu {
+      display: none; } }
   .mob-menu .line {
     margin: 0.25em 0;
     border-radius: 3px;
@@ -63,6 +84,12 @@ a {
   flex-direction: column;
   flex-grow: 1;
   align-items: stretch; }
+  @media (min-width: 23em) {
+    .menu {
+      flex-direction: row; } }
+  @media (min-width: 35em) {
+    .menu {
+      flex-grow: 1; } }
 
 .menu-items {
   padding: 0.25em 0;
@@ -72,7 +99,13 @@ a {
   width: 100%;
   flex-grow: 1;
   background: #dcf1dc; }
+  @media (min-width: 23em) {
+    .menu-items {
+      width: auto; } }
 
+/*
+**end menu
+*/
 .main {
   margin-top: 7em; }
 
@@ -85,43 +118,16 @@ a {
   background-size: cover;
   overflow-x: hidden;
   background-position: bottom center; }
-
-@media screen and (min-width: 23em) {
-  .navbar {
-    flex-direction: column;
-    align-items: center; }
-
-  .menu {
-    flex-direction: row; }
-
-  .menu-items {
-    width: auto; }
-
-  .front-poster {
-    background-position: bottom right; } }
-@media screen and (min-width: 35em) {
-  .navbar {
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: baseline; }
-    .navbar .collapsed {
-      display: flex; }
-
-  .title-name {
-    flex-grow: 0; }
-
-  .mob-menu {
-    display: none; }
-
-  .menu {
-    flex-grow: 1; }
-
-  .front-poster {
-    min-height: 500px; } }
-@media screen and (min-width: 64em) {
-  .front-poster {
-    height: 639px;
-    width: 100%;
-    max-width: 1000px; } }
+  @media (min-width: 23em) {
+    .front-poster {
+      background-position: bottom right; } }
+  @media (min-width: 35em) {
+    .front-poster {
+      min-height: 500px; } }
+  @media (min-width: 64em) {
+    .front-poster {
+      height: 639px;
+      width: 100%;
+      max-width: 1000px; } }
 
 /*# sourceMappingURL=style.css.map */

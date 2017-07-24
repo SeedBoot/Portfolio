@@ -12,3 +12,22 @@ $font-main: Roboto, sans-serif;
 $media-sml: 23em;
 $media-med: 35em;
 $media-large: 64em;
+
+//breakpoint
+@mixin bp-small {
+    @media (min-width: $media-sml) {
+        @content;
+    }
+}
+
+@mixin bp-med {
+    @media (min-width: $media-med) {
+        @content;
+    }
+}
+
+@mixin bp-large {
+    @media (min-width: $media-large) {
+        @content;
+    }
+}

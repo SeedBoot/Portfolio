@@ -17,9 +17,9 @@ a {
   color: $color-shadow;
 }
 
-//
-//menu
-//
+/*
+**menu
+*/
 
 .navbar {
   display: flex;
@@ -38,19 +38,38 @@ a {
   z-index: 999;
   width: 100%;
 
+  @include bp-small {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include bp-med {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+  }
 
   .collapsed {
   display: none;
+
+    @include bp-med {
+      display: flex;
+    }
   }
+
 }
 
 .title-name {
   margin: 1em;
   flex-grow: 1;
   font-family: $font-head;
+
+  @include bp-med {
+    flex-grow: 0;
+  }
 }
 
-/***HAMBURGER***/
+/***MOBILE MENU***/
 .mob-menu {
   width: 25px;
   z-index: 1;
@@ -62,6 +81,10 @@ a {
   //line-height: 20px;
   background-color: $color-button;
 
+  @include bp-med {
+    display: none;
+  }
+
   .line {
     margin: 0.25em 0;
     border-radius: 3px;
@@ -70,7 +93,6 @@ a {
     background: $color-shadow;
     display: block;
   }
-
 }
 //
 
@@ -83,6 +105,14 @@ a {
   flex-direction: column;
   flex-grow: 1;
   align-items: stretch;
+
+  @include bp-small {
+    flex-direction: row;
+  }
+
+  @include bp-med {
+    flex-grow: 1;
+  }
 }
 
 .menu-items {
@@ -93,11 +123,15 @@ a {
   width: 100%;
   flex-grow: 1;
   background: $color-button;
+
+  @include bp-small {
+    width: auto;
+  }
 }
 
-//
-//end menu
-//
+/*
+**end menu
+*/
 
 .main {
   margin-top: 7em;
@@ -112,58 +146,16 @@ a {
   background-size: cover;
   overflow-x: hidden;
   background-position: bottom center;
-}
 
-@media screen and (min-width: $media-sml) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .menu {
-    flex-direction: row;
-  }
-
-  .menu-items {
-    width: auto;
-  }
-
-  .front-poster {
+  @include bp-small {
     background-position: bottom right;
   }
-}
 
-@media screen and (min-width: $media-med) {
-  .navbar {
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: baseline;
-
-    .collapsed {
-      display: flex;
-    }
-  }
-
-  .title-name {
-    flex-grow: 0;
-  }
-
-  .mob-menu {
-    display: none;
-  }
-
-  .menu {
-    flex-grow: 1;
-  }
-
-  .front-poster {
+  @include bp-med {
     min-height: 500px;
   }
-}
 
-@media screen and (min-width: $media-large) {
-
-  .front-poster {
+  @include bp-large {
     height: 639px;
     width: 100%;
     max-width: 1000px;
