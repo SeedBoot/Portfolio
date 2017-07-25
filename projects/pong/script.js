@@ -178,7 +178,7 @@ function draw() {
   drawPlayer2Score();
 
 /**
-**** IF      // make ball collide with y axis
+**** IF      // make ball collide with top and bottom
 **** ELSE IF // player 1 paddle collsion
 **** ELSE IF // player 2 paddle collision
  **/
@@ -241,7 +241,7 @@ function draw() {
 /**
 **** paddle speed and collision with frame
  **/
- 
+
 //* Player 1
   if (wPressed && player1Y > wallsY) {
     player1Y -= 5;
