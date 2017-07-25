@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    margin: 0 auto;
+    width: 33%;
+    background: black;
+    color: white;
+}
