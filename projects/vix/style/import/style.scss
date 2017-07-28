@@ -1,0 +1,163 @@
+@import 'config/_var.scss';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: $font-main;
+  color: $color-shadow;
+}
+
+body {
+  background: linear-gradient(to bottom, $color-highlight, $color-shadow);
+}
+
+a {
+  text-decoration: none;
+  color: $color-shadow;
+}
+
+/*
+**menu
+*/
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  background: $color-menu;
+  border-bottom: 2px solid darken($color-menu, 60%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+
+  @include bp-small {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include bp-med {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .collapsed {
+  display: none;
+
+    @include bp-med {
+      display: flex;
+    }
+  }
+
+}
+
+.title-name {
+  margin: 1em;
+  flex-grow: 1;
+  font-family: $font-head;
+
+  @include bp-med {
+    flex-grow: 0;
+  }
+}
+
+/***MOBILE MENU***/
+.mob-menu {
+  width: 25px;
+  z-index: 1;
+  padding: 2px 15px;
+  border: 1px solid darken($color-button, 70%);
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  //line-height: 20px;
+  background-color: $color-button;
+
+  @include bp-med {
+    display: none;
+  }
+
+  .line {
+    margin: 0.25em 0;
+    border-radius: 3px;
+    width: 100%;
+    height: 3px;
+    background: $color-shadow;
+    display: block;
+  }
+}
+//
+
+.menu {
+  padding: 0;
+  margin-bottom: 0.5em;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: stretch;
+
+  @include bp-small {
+    flex-direction: row;
+  }
+
+  @include bp-med {
+    flex-grow: 1;
+  }
+}
+
+.menu-items {
+  padding: 0.25em 0;
+  border: 1px solid darken($color-button, 70%);
+  border-radius: 5px;
+  margin: 0.06em;
+  width: 100%;
+  flex-grow: 1;
+  background: $color-button;
+
+  @include bp-small {
+    width: auto;
+  }
+}
+
+/*
+**end menu
+*/
+
+.main {
+  margin-top: 7em;
+}
+
+.front-poster {
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 420px;
+  background: url(../../images/massage_1000.jpg);
+  background-size: cover;
+  overflow-x: hidden;
+  background-position: bottom center;
+
+  @include bp-small {
+    background-position: bottom right;
+  }
+
+  @include bp-med {
+    min-height: 500px;
+  }
+
+  @include bp-large {
+    height: 639px;
+    width: 100%;
+    max-width: 1000px;
+  }
+}
