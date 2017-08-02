@@ -10,7 +10,7 @@ var story = [
         ]
     },
     {
-        "statement":"Adam did nothing. He became one with the floor and his consciousness melted into the forest. He now knew where his friends were. But he was basically a tree now, so that didn't help much, did it? THE END!",
+        "statement":"",
         "answer":[
             {"title":"Back to the beginning?","response":0}
         ]
