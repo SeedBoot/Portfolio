@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<!--Some Meta-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test script</title>
+</head>
+<body>
+	<div id="box">
+		<canvas id="canvas"></canvas>
+	</div>
+
+	<script>
+
+		var canvas = document.getElementById('canvas');
+		var ctx    = canvas.getContext('2d');
+		var setCanvasSize = function() {
+			canvas.width  = window.innerWidth;
+			canvas.height = window.innerHeight;
+			};
+
+		var ball = {
+			x:20,
+			y:20,
+			w:20,
+			h:20,
+			fill:'#000000'
+		};
+
+		var player = {
+			one:{
+				paddle:{
+					x:canvas.width/2,
+					y:30,
+					w:10,
+					h:80,
+					fill:'blue'
+				}
+			},
+			two:{
+				paddle:{
+					x:canvas.width/4,
+					y:30,
+					w:10,
+					h:80,
+					fill:'green'
+				}
+			}
+		};
+		var playerOne = player.one.paddle;
+		var playerTwo = player.two.paddle;
+		
+		function makeRectangle(x, y, w, h, fill) {
+			ctx.beginPath();
+  			this.ctx.rect(x, y, w, h);
+			this.ctx.fillStyle = fill;
+			ctx.fill();
+			ctx.closePath();
+		};
+
+		function draw() {
+			//* resets canvas
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+			var square = makeRectangle(10, 10, 10, 10, '#ff0000');
+			//square;
+
+			makeRectangle(ball.x, ball.y, ball.w, ball.h, ball.fill);
+
+			makeRectangle(playerOne.x, playerOne.y, playerOne.w, playerOne.h, playerOne.fill);
+
+			requestAnimationFrame(draw);
+		};
+
+		draw();
+
+    </script>
+</body>
+</html>
