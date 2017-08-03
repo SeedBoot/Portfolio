@@ -19,14 +19,15 @@ I am proficient in:
 
 I am learning:
 - JavaScript
-- jQuery
 - SCSS
 - Bootstrap
 
-I am familiar with:
+I have some familiarity with:
+- jQuery
+- JSON
+- OOP
 - Python
 - PHP
-- JSON
 
 ## Tools
 I have experience using:
