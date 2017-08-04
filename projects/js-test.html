@@ -6,22 +6,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>test script</title>
+	<style>
+		html, body {
+		width:  100%;
+		height: 100%;
+		margin: 0px;
+		}
+	</style>
 </head>
 <body>
-	<div id="box">
-		<canvas id="canvas"></canvas>
-	</div>
-
+		<canvas id="canvas" width="640" height="480"></canvas>
 	<script>
-
+	//http://htmlcheats.com/html/resize-the-html5-canvas-dyamically/
 		var canvas = document.getElementById('canvas');
 		var ctx    = canvas.getContext('2d');
 		var setCanvasSize = function() {
-			canvas.width  = window.innerWidth;
-			canvas.height = window.innerHeight;
+			canvas.width  = '640px';
+			canvas.height = '480px';
 			};
 
-		var ball = {
+		var ball =
+		{
 			x:20,
 			y:20,
 			w:20,
@@ -29,28 +34,31 @@
 			fill:'#000000'
 		};
 
-		var player = {
-			one:{
-				paddle:{
-					x:canvas.width/2,
-					y:30,
-					w:10,
-					h:80,
-					fill:'blue'
+		var playerOne =
+		{
+				paddle:
+				{
+					x: canvas.width/2,
+					y: 30,
+					w: 10,
+					h: 80,
+					fill: 'blue'
 				}
-			},
-			two:{
-				paddle:{
-					x:canvas.width/4,
-					y:30,
-					w:10,
-					h:80,
-					fill:'green'
-				}
+		};
+
+		var playerTwo = 
+		{
+			paddle:
+			{
+				x: canvas.width/4,
+				y: 30,
+				w: 10,
+				h: 80,
+				fill: 'green'
 			}
 		};
-		var playerOne = player.one.paddle;
-		var playerTwo = player.two.paddle;
+		var p1 = playerOne.paddle;
+		var p2 = playerTwo.paddle;
 		
 		function makeRectangle(x, y, w, h, fill) {
 			ctx.beginPath();
@@ -65,12 +73,11 @@
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 			var square = makeRectangle(10, 10, 10, 10, '#ff0000');
-			//square;
+			var drawball = makeRectangle(ball.x, ball.y, ball.w, ball.h, ball.fill);
+			var drawP1 = makeRectangle(p1.x, p1.y, p1.w, p1.h, p1.fill);
+			var drawP2 = makeRectangle(p2.x, p2.y, p2.w, p2.h, p2.fill);
 
-			makeRectangle(ball.x, ball.y, ball.w, ball.h, ball.fill);
-
-			makeRectangle(playerOne.x, playerOne.y, playerOne.w, playerOne.h, playerOne.fill);
-
+			ball.x += 5;
 			requestAnimationFrame(draw);
 		};
 
