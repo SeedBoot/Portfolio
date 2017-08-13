@@ -12,17 +12,18 @@ I am using this repository as an ongoing example of my experience with web desig
 Please take a look at the code, or if you wish, take a look at [my portfolio](https://seedboot.github.io/Portfolio/) in action.
 
 ## Skills
-I am proficient in:
+### I am proficient in:
 - HTML
 - CSS
+- JavaScript
 - Responsive design
 
-I am learning:
+### I am learning:
 - JavaScript
 - SCSS
 - Bootstrap
 
-I have some familiarity with:
+### I have some familiarity with:
 - jQuery
 - JSON
 - OOP
@@ -30,12 +31,12 @@ I have some familiarity with:
 - PHP
 
 ## Tools
-I have experience using:
+### I have experience using:
 - Visual Studio Code/ Sublime etc.
 - Github Desktop
 - Photoshop
 
-I have some experience using:
+### I have some experience using:
 - Command prompt
 - Node.js/ Ruby/ NPM
 - Sass
