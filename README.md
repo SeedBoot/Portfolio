@@ -25,6 +25,7 @@ Please take a look at the code, or if you wish, take a look at [my portfolio](ht
 
 ### I have some familiarity with:
 - jQuery
+- Vue.js
 - JSON
 - OOP
 - Python
