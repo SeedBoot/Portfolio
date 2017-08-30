@@ -1,7 +1,7 @@
 /* Toggle Nav with Raw JavaScript */
 // Set variables for key elements
 var mainNav = document.getElementsByClassName('nav')[0];
-var navToggle = document.getElementById('mob-menu');
+var navToggle = document.getElementsByClassName('mob-menu')[0];
 
 // Start by adding the class "collapse" to the mainNav
 mainNav.classList.add('collapsed');
