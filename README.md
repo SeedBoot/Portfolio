@@ -21,6 +21,8 @@ Please take a look at the code, or if you wish, take a look at [my portfolio](ht
 ### I am learning:
 - JavaScript
 - SCSS
+- Python
+- PHP
 - Bootstrap
 
 ### I have some familiarity with:
@@ -28,8 +30,6 @@ Please take a look at the code, or if you wish, take a look at [my portfolio](ht
 - Vue.js
 - JSON
 - OOP
-- Python
-- PHP
 
 ## Tools
 ### I have experience using:
