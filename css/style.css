@@ -59,6 +59,7 @@ li {
 .mob-menu {
   margin: 0 auto;
   width: 30px;
+  /*.mob-menu is shown for responsive javascript trigger*/
   display: block;
   z-index: 1;
   cursor: pointer;
@@ -76,8 +77,11 @@ li {
 /*****NAVIGATION*****/
 .nav {
   padding: 0;
+}
+
+/*.collapsed is hidden for responsive javascript trigger*/
+.menu .collapsed {
   display: none;
-  /*hidden for responsiveness*/
 }
 
 .nav li {
@@ -87,6 +91,7 @@ li {
   padding: 0.1em;
   list-style-type: none;
   text-align: center;
+  
 }
 
 .button {
@@ -296,12 +301,6 @@ li {
 /*******RESPONSIVE STYLES*******/
 /***LARGE MOBILE DEVICE***/
 @media screen and (min-width: 30em) {
-  .mob-menu {
-    display: block;
-  }
-  .nav {
-    display: none;
-  }
   .nav li {
     width: auto;
     padding: 0;
@@ -311,12 +310,16 @@ li {
 
 /***DESKTOP***/
 @media screen and (min-width: 47em) {
+  /*.mob-menu is hidden for responsive javascript trigger*/
   .mob-menu {
     display: none;
   }
-  .nav {
+
+  /*.collapsed is displayed for responsive javascript trigger*/
+  .menu .collapsed {
     display: block;
   }
+
   .tile {
     width: 60%;
   }
@@ -324,12 +327,6 @@ li {
 
 /***even BIGGER desktop***/
 @media screen and (min-width: 56em) {
-  .mob-menu {
-    display: none;
-  }
-  .nav {
-    display: block;
-  }
   .flexbod,
   .foot {
     margin: 0 auto;
@@ -338,14 +335,12 @@ li {
 }
 
 @media screen and (min-width: 71em) {
-  .nav {
-    display: block;
-  }
   .tile {
     margin: 1em 3em 3em;
     width: 40%;
     display: inline-block;
   }
+
   .cont1 {
     display: flex;
     flex-wrap: wrap;
