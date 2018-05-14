@@ -1,9 +1,12 @@
 # Portfolio
 
+### Notes from 2018
+I'm working as a front end developer now! And while I haven't updated this site in a while, I've updated this readme! Thanks for checking in :)
+
 ## Introduction
 
 ### About me
-Hello world! My name is Oliver Booty, and I'm teaching myself Front end web development.
+Hello world! My name is Oliver Booty, and I'm ~~teaching myself Front end web development~~ a Front end web developer.
 
 ### About this repository
 
@@ -12,18 +15,21 @@ I am using this repository as an ongoing example of my experience with web desig
 Please take a look at the code, or if you wish, take a look at [my portfolio](https://seedboot.github.io/Portfolio/) in action.
 
 ## Skills
-### I am proficient in:
 - HTML
 - CSS
 - SCSS
 - JavaScript
 - jQuery
 - Responsive design
+- Python
 - Google (coughstackoverflowcough)
 
-### I am learning:
-- JavaScript
+## My favourites
+- SCSS
+- ES6
 - Python
+
+### I am learning:
 - PHP
 - SQL
 - Bootstrap
