@@ -15,31 +15,30 @@ Please take a look at the code, or if you wish, take a look at [my portfolio](ht
 ### I am proficient in:
 - HTML
 - CSS
+- SCSS
 - JavaScript
+- jQuery
 - Responsive design
+- Google (coughstackoverflowcough)
 
 ### I am learning:
 - JavaScript
-- SCSS
 - Python
 - PHP
+- SQL
 - Bootstrap
 
 ### I have some familiarity with:
-- jQuery
 - Vue.js
+- React
 - JSON
-- OOP
 
 ## Tools
-### I have experience using:
-- Visual Studio Code/ Sublime etc.
+- VS Code
 - Github Desktop
 - Photoshop
-
-### I have some experience using:
-- Command prompt
-- Node.js/ Ruby/ NPM
+- CLI
+- Node.js/ npm
 - Sass
 
 #### Thanks for reading!
